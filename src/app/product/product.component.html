@@ -1,0 +1,26 @@
+<div>
+<form (ngSubmit)="createProduct()" autocomplete="off" #bookForm='ngForm'>
+  <table>
+    <tr>
+      <td>Id: </td>
+      <td><input type="text" [(ngModel)]="product.id" name="id" required minlength="2"></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" [(ngModel)]="product.name" name="name"></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" [(ngModel)]="product.price" name="price"></td>
+    </tr>
+  </table>
+  <button value="submit" type="submit">Create</button>
+</form>
+</div>
+
+<div>
+<div *ngFor="let product of products">
+  <p>{{bookForm.valid | json}}</p>
+<!--  <p>{{product.name}}</p>-->
+</div>
+</div>
